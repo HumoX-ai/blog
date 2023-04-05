@@ -25,7 +25,7 @@ import { useRouter } from "next/router";
 const drawerWidth = 250;
 
 const BlurredAppBar = styled(AppBar)(({ theme }) => ({
-  backdropFilter: "blur(6px)", // Add the blur effect to the background
+  backdropFilter: "blur(6px)", 
   backgroundColor: "rgba(10, 25, 41, 0.5)",
 }));
 
