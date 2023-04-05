@@ -1,6 +1,16 @@
 import { navItems } from "@/config/constants";
 import { calculateEstimatedTimeToRead } from "@/helper/time.format";
-import { Avatar, Box, Button, Divider, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Divider,
+  Typography,
+} from "@mui/material";
 import { format } from "date-fns";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -15,14 +25,7 @@ export default function Sidebar({ latestBlogs, categories }) {
         style={{ position: "sticky", top: "100px" }}
         sx={{ transition: "all .3 ease-in" }}
       >
-        <Box
-          sx={{
-            p: "20px",
-
-            borderRadius: 2,
-            boxShadow: "2px 2px 4px #4a707a, -2px -2px 4px #4a707a",
-          }}
-        >
+        <Box>
           <Typography sx={{ pb: 3 }} color="primary" variant="h5">
             So`nggi qo`shilgan postlar
           </Typography>
@@ -39,46 +42,33 @@ export default function Sidebar({ latestBlogs, categories }) {
                 key={item.id}
                 onClick={() => router.push(`/blog/${item.slug}`)}
               >
-                <Box
+                <Card
                   sx={{
-                    display: "flex",
-                    flexDirection: {
-                      md: "column",
-                      sm: "column",
-                      xs: "column",
-                      lg: "column",
-                      xl: "column",
-                    },
-                    gap: { md: "20px", sm: "15px", xs: "10px" },
-                    alignItems: {
-                      md: "center",
-                      sm: "center",
-                      xs: "center",
-                    },
+                    maxWidth: 345,
+                    justifyContent: "center",
+                    m: "auto",
+                    backgroundColor: "#0a1929",
+                    borderRadius: "0px 25px 0px 25px",
+                    boxShadow: "2px 2px 4px #4a707a, -2px -2px 4px #4a707a",
                   }}
                 >
-                  <Image
-                    style={{
-                      objectFit: "cover",
-                      borderRadius: "8px",
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    src={item.image.url}
+                  <CardMedia
+                    component="img"
+                    height="180"
+                    image={item.image.url}
                     alt={item.title}
-                    width={300}
-                    height={170}
                   />
-                  <Box
-                    sx={{
-                      display: "flex ",
-                      flexDirection: "column",
-                      gap: 1,
-                    }}
-                  >
-                    <Typography color="primary" variant="subtitle1">
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      color="primary"
+                      component="div"
+                    >
                       {item.title}
                     </Typography>
+                  </CardContent>
+                  <CardActions>
                     <Box
                       sx={{
                         display: "flex",
@@ -107,14 +97,15 @@ export default function Sidebar({ latestBlogs, categories }) {
                         </Box>
                       </Box>
                     </Box>
-                  </Box>
-                </Box>
+                  </CardActions>
+                </Card>
 
                 <Divider sx={{ backgroundColor: "grey", mt: "20px" }} />
               </Box>
             ))}
           </Box>
         </Box>
+
         <Box
           sx={{
             mt: "20px",

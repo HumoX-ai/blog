@@ -12,21 +12,21 @@ export default function Content({ blogs }) {
     <Box width={{ xs: "100%", md: "75%" }}>
       <Grid container spacing={2}>
         {blogs.map((item) => (
-          <Grid item xs={12} sm={12} md={6} xl={4} key={item.id} >
+          <Grid item xs={12} sm={12} md={6} xl={4} key={item.id}>
             <Box
               sx={{
                 backgroundColor: "rgba(0, 0, 0, .5)",
                 padding: "20px",
-                borderRadius: "8px",
+                borderRadius: "0px 25px 0px 25px",
                 boxShadow: "0px 8px 16px rgba(255, 255, 255, .1)",
                 cursor: "pointer",
                 height: "100%",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                cursor:"pointer"
+                cursor: "pointer",
               }}
-              onClick= { () => router.push(`/blog/${item.slug}`)}
+              onClick={() => router.push(`/blog/${item.slug}`)}
             >
               <Box position={"relative"} height={{ xs: "30vh", md: "50vh" }}>
                 <Image

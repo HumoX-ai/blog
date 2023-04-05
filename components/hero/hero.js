@@ -71,10 +71,11 @@ const Hero = ({ blogs }) => {
                   {item.title}
                 </Typography>
                 <Typography
-                  color={"gray"}
-                  sx={{ fontSize: { xs: "20px", md: "25px" } }}
+                  sx={{ fontSize: { xs: "20px", md: "25px", opacity: ".6" } }}
                 >
-                  {item.excerpt}
+                  {item.excerpt.length > 5
+                    ? `${item.excerpt.slice(0, 90)}...`
+                    : item.excerpt}
                 </Typography>
                 <Box
                   sx={{
