@@ -26,7 +26,7 @@ const drawerWidth = 250;
 
 const BlurredAppBar = styled(AppBar)(({ theme }) => ({
   backdropFilter: "blur(6px)", // Add the blur effect to the background
-  backgroundColor: "rgba(10, 25, 41, 0.5)", // Add a semi-transparent background color
+  backgroundColor: "rgba(10, 25, 41, 0.5)",
 }));
 
 function ScrollTop(props) {
