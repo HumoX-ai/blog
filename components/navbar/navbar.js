@@ -22,7 +22,7 @@ import { red } from "@mui/material/colors";
 
 import { useRouter } from "next/router";
 
-const drawerWidth = 250;
+const drawerWidth = 251;
 
 const BlurredAppBar = styled(AppBar)(({ theme }) => ({
   backdropFilter: "blur(6px)", 
