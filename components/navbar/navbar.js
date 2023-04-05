@@ -10,14 +10,14 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-
+import {FaBars} from "react-icons/fa"
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { navItems } from "@/config/constants";
 import styled from "@emotion/styled";
 
-import { Fab, Fade, Stack, useScrollTrigger } from "@mui/material";
+import { Fab, Fade, useScrollTrigger } from "@mui/material";
 import { red } from "@mui/material/colors";
 
 import { useRouter } from "next/router";
@@ -122,6 +122,7 @@ function Navbar(props) {
                 }
               />
             </ListItemButton>
+          
           </ListItem>
         ))}
       </List>
@@ -146,7 +147,7 @@ function Navbar(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" }, color: "#007fff" }}
           >
-        
+        <FaBars/>
           </IconButton>
           <IconButton>
             <Typography
@@ -180,7 +181,7 @@ function Navbar(props) {
             </Typography>
           </IconButton>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "block" } }}></Box>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", md: "block" } }}>
             {navItems.map((item) => (
               <Button
                 startIcon={item.icon}

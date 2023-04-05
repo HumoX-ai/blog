@@ -1,8 +1,9 @@
-
+import {BiHomeAlt} from  "react-icons/bi"
 export const navItems = [
   {
     route: "/",
     label: "Bosh sahifa",
+    icon: <BiHomeAlt/>
    
   },
   {
