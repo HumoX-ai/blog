@@ -259,10 +259,7 @@ function Navbar(props) {
         <Toolbar />
       </Box>
       <ScrollTop {...props}>
-        <Fab
-          size="small"
-          aria-label="scroll back to top"
-                 >
+        <Fab size="small" aria-label="scroll back to top">
           <IoIosArrowUp />
         </Fab>
       </ScrollTop>

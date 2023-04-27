@@ -14,7 +14,7 @@ export const navItems = [
   },
   {
     id: 3,
-    route: "/blogs",
+    route: "/blog",
     label: "Men haqimda",
     icon: <SiCodersrank />,
   },
